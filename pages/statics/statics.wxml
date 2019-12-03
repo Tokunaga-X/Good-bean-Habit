@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="textArea">
+    <text class="nodata">当前你有<text class="data">{{numberOfHabits}}</text>个习惯在保持中</text>
+    <text  class="nodata">你保持得最好的一个习惯是<text class="data">{{longestName}}。</text></text>
+    <text  class="nodata">一共保持了<text class="data">{{longestTime}}</text>天</text> 
+  </view>
+    <view class="chartArea">
+      <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+
+    </view>
+</view>

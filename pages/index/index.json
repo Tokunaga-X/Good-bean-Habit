@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "习惯养成",
+  "usingComponents": {
+    "mp-dialog": "../../miniprogram_npm/weui-miniprogram/dialog/dialog",
+    "mp-loading": "../../miniprogram_npm/weui-miniprogram/loading/loading"
+  }
+}

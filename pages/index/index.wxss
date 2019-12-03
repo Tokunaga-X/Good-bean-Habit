@@ -1,0 +1,129 @@
+/**index.wxss**/
+.intro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+}
+.intro image {
+  width: 100%;
+  height: 100%;
+}
+.intro image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(2, 2, 2, 0.3);
+}
+.intro .introinfo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.intro .introinfo .head {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 5rem;
+}
+.intro .introinfo text {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+  font-weight: bold;
+  animation: popup 1s ease-in-out;
+}
+@keyframes popup {
+  0%{
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0rem);
+    opacity: 1;
+
+  }
+}
+.intro .introinfo text text {
+  font-size: 1.5rem;
+  color: greenyellow;
+}
+
+.intro .introinfo button {
+  color: white;
+  border: 5rpx solid white;
+  animation: showup 1s ;
+}
+@keyframes showup {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+
+  }
+}
+
+.addItem {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+.addItem .input {
+  flex: 9;
+  padding: 10rpx;
+  border: 1rpx solid gray;
+  background: white;
+  position: relative;
+  z-index: 2;
+}
+.placeholder {
+  font-size: 0.5rem;
+}
+.addItem icon {
+  margin: 5rpx;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.list {
+  width: 95%;
+}
+.listItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 5rpx;
+  margin: 3rpx 0;
+}
+.itemIcon {
+  flex:1;
+}
+.itemName {
+  text-align: center;
+  flex:7;
+}
+.itemBtn {
+  flex:2;
+  border-radius: 30rpx;
+}

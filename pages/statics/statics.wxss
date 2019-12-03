@@ -1,0 +1,46 @@
+.container {
+  color: #222;
+}
+.textArea {
+  height: 12rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+.chartArea {
+  width: 100%;
+  height: 15rem;
+  background: white;
+  margin-top: 1rem;
+}
+.container .nodata {
+  margin: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.container .data  {
+  color: green;
+  font-size: 1.3rem;
+  font-weight: bold;
+  animation: popup 1s ease-in-out;
+
+}
+@keyframes popup {
+  0%{
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0rem);
+    opacity: 1;
+
+  }
+}
+
+ec-canvas {
+  margin-top: 1rem;
+  width: 100%;
+  height: 50%;
+}
