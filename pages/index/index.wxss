@@ -12,7 +12,7 @@
   height: 100%;
 }
 .intro image::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -24,7 +24,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   color: white;
   display: flex;
   flex-direction: column;
@@ -38,43 +38,46 @@
   border-radius: 50%;
   background-size: cover;
   background-position: center;
+  background-color: aliceblue;
   margin-bottom: 5rem;
 }
-.intro .introinfo text {
-  margin-left: 2rem;
+.intro .introinfo .textContainer {
+  margin: 0 auto;
   margin-bottom: 2rem;
   color: white;
   font-weight: bold;
   animation: popup 1s ease-in-out;
 }
 @keyframes popup {
-  0%{
+  0% {
     transform: translateY(3rem);
     opacity: 0;
   }
-  100%{
+  100% {
     transform: translateY(0rem);
     opacity: 1;
-
   }
 }
-.intro .introinfo text text {
+.intro .introinfo text .greenText {
   font-size: 1.5rem;
   color: greenyellow;
+}
+.intro .introinfo text .whiteText {
+  color: white;
+  font-weight: bold;
 }
 
 .intro .introinfo button {
   color: white;
   border: 5rpx solid white;
-  animation: showup 1s ;
+  animation: showup 1s;
 }
 @keyframes showup {
-  0%{
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
-
   }
 }
 
@@ -82,7 +85,7 @@
   width: 95%;
   display: flex;
   align-items: center;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
 .addItem .input {
   flex: 9;
@@ -117,13 +120,13 @@
   margin: 3rpx 0;
 }
 .itemIcon {
-  flex:1;
+  flex: 1;
 }
 .itemName {
   text-align: center;
-  flex:7;
+  flex: 7;
 }
 .itemBtn {
-  flex:2;
+  flex: 2;
   border-radius: 30rpx;
 }

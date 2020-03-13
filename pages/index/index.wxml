@@ -1,43 +1,42 @@
-<!--index.wxml-->
-<view class="intro" wx:if="{{introDisplay}}" >
+<!-- index.wxml -->
+<view class="intro" wx:if="{{introDisplay}}">
   <image src="./assets/back.jpg"></image>
-  <view class="introinfo" >
+  <view class="introinfo">
     <view class="head" style="background-image: url({{avatarUrl}})"></view>
-    <text><text>每天来一次</text>，遇见更好的自己</text>
-    <button plain="true" bindtap="go" size="mini">Go!</button>
+    <text class="textContainer">
+      <text class="greenText">每天来一次</text>
+      <text class="whiteText">，遇见更好的自己</text>
+    </text>
+    <button size="mini" plain="true" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+      go
+    </button>
   </view>
 </view>
-
 <view class="container" wx:if="{{containerDisplay}}">
-    <view class="addItem">
-      <input class="input" placeholder="新建习惯" placeholder-class="placeholder" value="{{inputValue}}" bindinput="inputValue">
-        <icon type="success" size="30" bindtap="add"></icon>
-      </input>
+  <view class="addItem">
+    <input class="input" placeholder="新建习惯" placeholder-style="placeholder" value="{{inputValue}}" bindinput="setInputValue">
+      <icon type="success" size="30" bindtap="add"></icon>
+    </input>
+  </view>
+  <view class="list" wx:for="{{listItems}}" wx:key="id">
+    <view class="listItem">
+      <icon type="cancel" class="itemIcon" bindtap="openConfirm1" data-index="{{index}}"></icon>
+      <view class="itemName">{{item.name}}</view>
+      <button type="primary" size="mini" loading="{{loading}}" plain="{{plain}}" bindtap="check" class="itemBtn" data-checked="{{item.checked}}" data-index="{{index}}">
+        check
+      </button>
     </view>
-
-    <view class="list" wx:for="{{listItems}}" wx:key="id">
-      <view class="listItem">
-        <icon type="cancel" class="itemIcon" bindtap="openConfirm1" data-index="{{index}}"></icon>
-        <view class="itemName">{{item.name}}</view>
-        <button type="primary" size="mini" loading="{{loading}}" plain="{{plain}}" bindtap="check" class="itemBtn" data-checked="{{item.checked}}" data-index="{{index}}"> check </button>
-      </view>
-    </view>
-
-    <mp-dialog title="删除" show="{{deleteDialogShow}}" bindbuttontap="tapDialog1Button" buttons="{{buttons1}}">
-      <view>你真的要删除这条习惯吗？</view>
-    </mp-dialog>
-
-    <mp-dialog title="成功" show="{{successDialogShow}}" bindbuttontap="tapDialog2Button" buttons="{{buttons2}}">
-      <view>恭喜你，又有一个习惯等待你去保持！</view>
-    </mp-dialog>
-
-    <mp-dialog title="打卡" show="{{checkSuccessDialogShow}}" bindbuttontap="tapDialog3Button" buttons="{{buttons3}}">
-      <view>恭喜你，成功保持了一个习惯！</view>
-    </mp-dialog>
-
-    <mp-dialog title="打卡" show="{{checkFailDialogShow}}" bindbuttontap="tapDialog3Button" buttons="{{buttons3}}">
-      <view>不好意思，你已经打卡过这个习惯了，请明天再来。</view>
-    </mp-dialog>
-
-
+  </view>
+  <mp-dialog title="删除" show="{{deleteDialogShow}}" bindbuttontap="tapDialog1Button" buttons="{{buttons1}}">
+    <view>你真的要删除这条习惯吗？</view>
+  </mp-dialog>
+  <mp-dialog title="成功" show="{{successDialogShow}}" bindbuttontap="tapDialog2Button" buttons="{{buttons2}}">
+    <view>恭喜你，又有一个习惯等待你去保持！</view>
+  </mp-dialog>
+  <mp-dialog title="打卡" show="{{checkSuccessDialogShow}}" bindbuttontap="tapDialog3Button" buttons="{{buttons3}}">
+    <view>恭喜你，成功保持了一个习惯！</view>
+  </mp-dialog>
+  <mp-dialog title="打卡" show="{{checkFailDialogShow}}" bindbuttontap="tapDialog3Button" buttons="{{buttons3}}">
+    <view>不好意思，你已经打卡过这个习惯了，请明天再来。</view>
+  </mp-dialog>
 </view>
